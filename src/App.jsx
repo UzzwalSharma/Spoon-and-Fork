@@ -8,7 +8,7 @@ import DidYouKnowPopup from './DidYouKnowPopup';
 import NearbyRestaurants from './NearbyRestaurants';
 import FloatingChatbotIcon from './FloatingChatbotIcon';
 import Aboutus from './Aboutus';
-import ContactUs from './Contactus';
+// import ContactUs from './Contactus';
 import { SignIn, SignUp } from '@clerk/clerk-react';
 import { motion } from 'framer-motion';
 
