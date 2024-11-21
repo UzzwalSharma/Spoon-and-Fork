@@ -1,0 +1,92 @@
+/* Section container styling */
+section {
+    background: linear-gradient(to right, #f0f8ff, #ffebcd); /* Subtle background gradient */
+    padding: 3rem 2rem; /* Vertical and horizontal padding */
+    border-radius: 16px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 1000px; /* Limit the max width */
+    margin: 0 auto; /* Center the section */
+    overflow: hidden; /* Prevent overflow */
+  }
+  
+  /* Motion wrapper styling */
+  motion.div {
+    max-width: 900px;
+    margin: 0 auto; /* Center the content */
+    padding: 2rem; /* Padding for inner content */
+    background: white; /* White background for contrast */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  /* Heading Styling */
+  h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2d3748; /* Dark text for the heading */
+    line-height: 1.2;
+    letter-spacing: -0.5px; /* Slight letter spacing for a clean look */
+  }
+  
+  /* Paragraph Styling */
+  p {
+    font-size: 1.125rem;
+    color: #4a5568; /* Soft gray color for the text */
+    margin-top: 1.5rem; /* Space above the paragraph */
+    line-height: 1.6;
+    max-width: 800px; /* Limit the width */
+    margin-left: auto; /* Center the paragraph */
+    margin-right: auto; /* Center the paragraph */
+  }
+  
+  /* Additional Styling for DidYouKnowPopup */
+  .did-you-know-container {
+    margin-top: 2rem; /* Space between paragraph and popup input */
+    padding: 1.5rem;
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    max-width: 500px; /* Limit the width of the container */
+    margin: 20px auto; /* Center the container */
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .input-field {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ccc; /* Light gray border */
+    transition: border-color 0.3s;
+  }
+  
+  .input-field:focus {
+    border-color: #ff6347; /* Highlight the border on focus */
+    outline: none;
+  }
+  
+  .submit-button {
+    padding: 12px 24px;
+    background-color: #ff6347; /* Tomato red color */
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .submit-button:hover {
+    background-color: #e53e3e; /* Darker red on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+  }
+  
+  .submit-button:active {
+    transform: translateY(2px); /* Slight downward movement on click */
+  }
+  

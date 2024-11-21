@@ -1,0 +1,108 @@
+/* Make the popup overlay cover the entire viewport */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden; /* Prevent background scroll */
+  }
+  
+  /* Make the popup content wider and add a nice font family */
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 95%; /* Increased width */
+    max-width: 600px; /* Limit max width for larger screens */
+    max-height: 80vh; /* Restrict height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    font-family: 'Poppins', sans-serif; /* Add modern font */
+  }
+  
+  /* Optional: Style the scrollbar */
+  .popup-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .popup-content::-webkit-scrollbar-thumb {
+    background-color: #ffa500; /* Match the theme color */
+    border-radius: 5px;
+  }
+  
+  .popup-content::-webkit-scrollbar-thumb:hover {
+    background-color: #ff8c00;
+  }
+  
+  /* Close button styling */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff6347; /* Tomato color */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .close-button:hover {
+    background-color: #e53e3e; /* Darker red */
+  }
+  /* Style for the input field */
+.input-field {
+    width: 40%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #ddd; /* Light border color */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: 'Poppins', sans-serif; /* Apply the same font */
+  }
+  
+  /* Input field focus effect */
+  .input-field:focus {
+    border-color: #ff6347; /* Tomato color on focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 99, 71, 0.3); /* Focus shadow */
+  }
+  
+  /* Style for the submit button */
+  .submit-button {
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    font-size: 16px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif; /* Same font */
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Button hover effect */
+  .submit-button:hover {
+    background-color: #e53e3e; /* Darker red on hover */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+  }
+  
+  /* Button active (clicked) effect */
+  .submit-button:active {
+    transform: translateY(2px); /* Slight downward movement on click */
+  }
