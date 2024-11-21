@@ -27,7 +27,7 @@ const ContactUsForm = () => {
     if (!validateForm()) return;
 
     setLoading(true);
-    const response = await fetch('https://formspree.io/f/xkgnzkyz', {
+    const response = await fetch('https://formspree.io/f/mjkvojlz', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
