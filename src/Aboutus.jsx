@@ -27,7 +27,7 @@ const RestaurantWebsite = () => {
                 className="w-1/3 rounded-lg shadow-md hover:scale-105 transition-transform"
               />
               <img 
-                src="https://www.mowglistreetfood.com/wp-content/uploads/2023/01/Landing_image_Desktop.jpg" 
+                src="https://www.foodiesfeed.com/wp-content/uploads/2023/06/pouring-honey-on-pancakes.jpg" 
                 alt="Food 2" 
                 className="w-1/3 rounded-lg shadow-md hover:scale-105 transition-transform"
               />
