@@ -82,7 +82,7 @@ const HeroSection = () => {
       {/* Floating Hot Air Balloon */}
      {/* Add more balloons with slightly different animations */}
      <motion.img
-  src="public/754dfe1e-aae1-4bb5-bf05-6c2dc2c17d37.png" // Replace with your hot air balloon image path
+  src="/754dfe1e-aae1-4bb5-bf05-6c2dc2c17d37.png" // Replace with your hot air balloon image path
   alt="Hot Air Balloon"
   className="absolute"
   style={{ width: '520px', height: 'auto' }} // Reduced size for better visibility
