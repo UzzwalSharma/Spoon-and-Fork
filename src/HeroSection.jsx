@@ -79,33 +79,7 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
 
-      {/* Floating Hot Air Balloon */}
-     {/* Add more balloons with slightly different animations */}
-     <motion.img
-  src="/754dfe1e-aae1-4bb5-bf05-6c2dc2c17d37.png" // Replace with your hot air balloon image path
-  alt="Hot Air Balloon"
-  className="absolute"
-  style={{ width: '520px', height: 'auto' }} // Reduced size for better visibility
-  animate={{
-    x: ["10%", "30%", "60%", "90%"], // Adjust horizontal path to keep it within the screen
-    y: ["80%", "45%", "-30%", "0%"], // Vertical floating motion
-    opacity: [1, 0.8, 0.5, 0], // Fade out as it moves
-    rotate: [0, 10, -10, 0], // Gentle rotation
-    scale: [2, 1.05, 1, 1], // Slight scaling effect
-  }}
-  transition={{
-    duration: 5, // Total duration of the animation
-    repeat: Infinity, // Infinite repetition
-    ease: "easeInOut", // Smooth easing for natural movement
-    times: [0, 0.33, 0.66, 1], // Control when opacity changes during the animation
-  }}
-/>
-
-
-
-
-
-      {/* Additional Floating Elements */}
+         {/* Additional Floating Elements */}
       <motion.div
         className="absolute top-10 left-10 w-20 h-20 bg-green-500 rounded-full opacity-30"
         animate={{

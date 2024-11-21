@@ -1,128 +1,106 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
 
-const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-    privacyPolicy: false,
-  });
+const ContactUsForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleInputChange = (e) => {
-    const { id, value, checked, type } = e.target;
-    setFormData({
-      ...formData,
-      [id]: type === "checkbox" ? checked : value,
-    });
+  // Form Validation
+  const validateForm = () => {
+    if (!name || !email || !message) {
+      alert('Please fill out all fields');
+      return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return false;
+    }
+    return true;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for reaching out! We will get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-      privacyPolicy: false,
+    if (!validateForm()) return;
+
+    setLoading(true);
+    const response = await fetch('https://formspree.io/f/mldedaoq', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
     });
+
+    setLoading(false);
+    if (response.ok) {
+      setSubmitted(true);
+    } else {
+      console.error('Form submission failed.');
+    }
   };
 
   return (
-    <section className="contact-section container" style={{ padding: "50px 15px", backgroundColor: "#f9f9f9" }}>
-      <div className="text-center mb-4">
-        <h2 className="fw-bold">Contact Us</h2>
-        <p>We'd love to hear from you! Reach out to us via the form below or using the contact details provided.</p>
-      </div>
+    <div className="contact-us-section p-10 bg-gray-100">
+      {submitted ? (
+        <div className="text-center">
+          <h3 className="text-2xl font-bold text-green-600">Thank You for Contacting Us, {name}!</h3>
+          <p className="text-gray-700 mt-4">
+            We appreciate you reaching out. Our team will get back to you as soon as possible.
+          </p>
+          <p className="text-gray-700 mt-2">
+            If you have any urgent issues, feel free to contact us at <strong>uzzwal7505@gmail.com</strong>.
+          </p>
+          <p className="text-blue-500 font-semibold mt-4">
+            We look forward to assisting you!
+          </p>
+        </div>
+      ) : loading ? (
+        <div className="flex justify-center items-center">
+          <CircularProgress />
+        </div>
+      ) : (
+        <div className="flex flex-col lg:flex-row items-center justify-between">
+          {/* Image Section */}
+          <div className="mb-10 lg:mb-0 lg:w-1/2">
+            <img src="/rb_2148893542.png" alt="Contact Us Illustration" className="w-full h-auto" />
+          </div>
 
-      <div className="row align-items-center g-5">
-        <div className="col-md-6">
-          {/* Contact Form */}
-          <div className="card contact-card p-4" style={{ border: "none", backgroundColor: "#ffffff", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}>
-            <h5 className="fw-bold mb-3">Send Us a Message</h5>
-            <form id="contactForm" onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="name" className="form-label">Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">Email</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="message" className="form-label">Message</label>
-                <textarea
-                  className="form-control"
-                  id="message"
-                  rows="5"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                ></textarea>
-              </div>
-              <div className="form-check mb-3">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="privacyPolicy"
-                  checked={formData.privacyPolicy}
-                  onChange={handleInputChange}
-                  required
-                />
-                <label className="form-check-label" htmlFor="privacyPolicy">
-                  I agree to the{" "}
-                  <a href="#" className="text-decoration-none" style={{ color: "#000000" }}>
-                    Privacy Policy
-                  </a>{" "}
-                  and acknowledge that my information will be securely stored.
-                </label>
-              </div>
-              <button type="submit" className="btn btn-primary w-50">Send Message</button>
-            </form>
-          </div>
+          {/* Form Section */}
+          <form onSubmit={handleSubmit} className="lg:w-1/2 space-y-4 lg:ml-8">
+            <h2 className="text-2xl font-bold mb-4">We'd Love to Hear from You!</h2>
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="border p-2 w-full"
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="border p-2 w-full"
+            />
+            <textarea
+              placeholder="Your Message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className="border p-2 w-full h-32"
+            ></textarea>
+            <button type="submit" className="bg-blue-600 text-white py-2 px-4 rounded">
+              Submit Message
+            </button>
+          </form>
         </div>
-        <div className="col-md-6">
-          {/* Contact Information */}
-          <div className="container">
-            <div className="card p-3" style={{ backgroundColor: "transparent", border: "none" }}>
-              <h5 className="fw-bold mb-3">Contact Information</h5>
-              <p><i className="bi bi-envelope"></i> Email: <a href="mailto:info@foodiesdelight.com" className="text-decoration-none">info@foodiesdelight.com</a></p>
-              <p><i className="bi bi-telephone"></i> Phone: <a href="tel:+1234567890" className="text-decoration-none">+1 234 567 890</a></p>
-              <p><i className="bi bi-geo-alt"></i> Address: Ghaziabad, Uttar Pradesh</p>
-              <div className="share-mode" style={{ display: "flex", gap: "8.25px" }}>
-                <i className="fa-brands fa-facebook" style={{ color: "#FFFFFF", backgroundColor: "#0866FF", borderRadius: "12px", padding: "5px" }}></i>
-                <i className="fa-brands fa-whatsapp" style={{ color: "#FFFFFF", backgroundColor: "#25D366", borderRadius: "12px", padding: "5px" }}></i>
-                <i className="fa-brands fa-linkedin-in" style={{ backgroundColor: "#0077B5", color: "#FFFFFF", borderRadius: "12px", padding: "5px" }}></i>
-                <i className="fa-regular fa-copy" style={{ backgroundColor: "#E0E0E0", color: "#313131", borderRadius: "12px", padding: "5px" }}></i>
-              </div>
-              <img
-                src="https://www.wasserstrom.com/blog/wp-content/uploads/2022/03/food-photography-header.jpg"
-                alt="focd"
-                className="w-100 mt-4"
-                style={{ borderRadius: "0 50px 0 50px" }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      )}
+    </div>
   );
 };
 
-export default ContactUs;
+export default ContactUsForm;

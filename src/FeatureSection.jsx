@@ -49,7 +49,7 @@ const FeatureSection = () => {
   ];
 
   return (
-    <section className="feature-section bg-green-50 py-16">
+    <section id="features-section" className="feature-section bg-green-50 py-16">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-extrabold text-gray-800 leading-tight">
           Discover the Features That Enhance Your Cooking Journey

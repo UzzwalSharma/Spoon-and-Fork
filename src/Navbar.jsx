@@ -4,7 +4,8 @@ import { Menu as MenuIcon } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
-import { FaSearchLocation } from 'react-icons/fa'; // Import React Icon for Nearby Restaurants
+// import { FaSearchLocation } from 'react-icons/fa'; // Import React Icon for Nearby Restaurants
+import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink for smooth scrolling
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -55,8 +56,12 @@ const Navbar = () => {
             {navItems.map((item) => (
               <Button
                 key={item}
-                component={Link} // Use Link here
-                to={`/${item.toLowerCase()}`} // Use "to" prop for navigation
+                component={item === 'Features' ? ScrollLink : Link} // Use ScrollLink for Features
+                to={item === 'Features' ? 'features-section' : `/${item.toLowerCase()}`} // Set target for scroll on Features
+                spy={true}
+                smooth={true}
+                offset={-70} // Offset to account for the Navbar height
+                duration={500} // Duration for scroll animation
                 sx={{
                   color: '#333',
                   fontWeight: '500',
@@ -86,50 +91,11 @@ const Navbar = () => {
                 {item}
               </Button>
             ))}
-
-            {/* Nearby Restaurants Link with Icon */}
-            <Button
-              component={Link} // Use Link here
-              to="/nearby-restaurants" // Add the route for Nearby Restaurants page
-              sx={{
-                color: '#333',
-                fontWeight: '500',
-                textTransform: 'uppercase',
-                letterSpacing: '1px',
-                fontSize: '1rem',
-                position: 'relative',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                '&:hover': {
-                  color: '#4CAF50',
-                },
-                '&::after': {
-                  content: '""',
-                  position: 'absolute',
-                  left: 0,
-                  bottom: -4,
-                  width: '100%',
-                  height: '2px',
-                  backgroundColor: '#4CAF50',
-                  transform: 'scaleX(0)',
-                  transition: 'transform 0.3s',
-                },
-                '&:hover::after': {
-                  transform: 'scaleX(1)',
-                },
-              }}
-            >
-              <FaSearchLocation /> {/* Icon for Nearby Restaurants */}
-              Nearby Restaurants
-            </Button>
-            
           </Box>
         )}
 
         {/* SignIn / User Button */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          {/* SignIn / User Button */}
           <SignedOut>
             <SignInButton mode="modal">
               <Button
@@ -195,8 +161,8 @@ const Navbar = () => {
             <MenuItem
               key={item}
               onClick={handleMenuClose}
-              component={Link} // Use Link here
-              to={`/${item.toLowerCase()}`} // Use "to" prop for navigation
+              component={item === 'Features' ? ScrollLink : Link} // Use ScrollLink for Features
+              to={item === 'Features' ? 'features-section' : `/${item.toLowerCase()}`} // Use "to" prop for scroll or regular navigation
               sx={{
                 color: '#333',
                 fontFamily: "'Poppins', sans-serif",
@@ -208,40 +174,6 @@ const Navbar = () => {
               {item}
             </MenuItem>
           ))}
-          {/* Nearby Restaurants in Mobile Menu */}
-          <MenuItem
-            onClick={handleMenuClose}
-            component={Link}
-            to="/nearby-restaurants"
-            sx={{
-              color: '#333',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: '1rem',
-              letterSpacing: '0.5px',
-              '&:hover': { backgroundColor: '#F0F0F0', color: '#4CAF50' },
-            }}
-          >
-            <FaSearchLocation /> {/* Icon for Nearby Restaurants */}
-            Nearby Restaurants
-          </MenuItem>
-
-          <Divider sx={{ my: 1 }} />
-          {/* Mobile SignIn / User Button */}
-          <SignedOut>
-            <SignInButton mode="modal">
-              <MenuItem onClick={handleMenuClose} sx={{ color: '#333' }}>
-                Sign In
-              </MenuItem>
-            </SignInButton>
-          </SignedOut>
-          <SignedIn>
-            <MenuItem onClick={handleMenuClose} sx={{ color: '#333' }}>
-              <UserButton />
-            </MenuItem>
-          </SignedIn>
         </Menu>
       </Toolbar>
     </AppBar>
@@ -249,8 +181,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
