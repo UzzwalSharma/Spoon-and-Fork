@@ -9,8 +9,8 @@ const RecipeOfTheDay = () => {
     const fetchRecipe = async () => {
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/recipes/random?apiKey=9c83c683f5f94e559aa1d33b3ed75dc8
-`
+          "https://api.spoonacular.com/recipes/random?apiKey=dea94ffa46224c2a85f89bd5d1e34716"
+
         );
         const data = await response.json();
         setRecipe(data.recipes[0]);
