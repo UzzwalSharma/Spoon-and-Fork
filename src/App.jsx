@@ -17,7 +17,7 @@ const Loader = () => (
   <div className="fixed inset-0 flex flex-col items-center justify-center bg-white z-50 space-y-4">
     {/* Food-related Icon with Framer Motion Bouncing Animation */}
     <motion.img 
-      src="public/portrait-person-holding-fast-food-burger.png"  // Replace with your food-related image or icon
+      src="/portrait-person-holding-fast-food-burger.png"  // Replace with your food-related image or icon
       alt="Loading Food"
       className="w-32 h-32"
       animate={{ y: ["0%", "-10%", "0%"] }}  // Food icon bounces up and down
