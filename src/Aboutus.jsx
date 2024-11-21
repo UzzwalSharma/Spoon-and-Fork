@@ -32,7 +32,7 @@ const RestaurantWebsite = () => {
                 className="w-1/3 rounded-lg shadow-md hover:scale-105 transition-transform"
               />
               <img 
-                src="https://unstop.com/hackathons/nature-first-hackathon-gl-bajaj-institute-of-technology-and-management-1216888" 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScMxm8P4_-x1MnZn-yKA_GCIhicV4nlq4IAOwffxsPnvS0g4yusOBTnhUo-ho5qH_qQ6I&usqp=CAU" 
                 alt="Food 3" 
                 className="w-1/3 rounded-lg shadow-md hover:scale-105 transition-transform"
               />
