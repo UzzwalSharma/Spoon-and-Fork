@@ -13,7 +13,7 @@ const HeroSection = () => {
           playsInline
         >
           <source
-            src="public/10835190-hd_3840_2160_24fps.mp4"
+            src="/10835190-hd_3840_2160_24fps.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
