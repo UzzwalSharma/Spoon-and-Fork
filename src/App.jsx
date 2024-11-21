@@ -104,7 +104,7 @@ function App() {
             <Route path="/" element={<Landingpage />} />
             <Route path="story" element={<DidYouKnowPopup />} />
             <Route path="about" element={<Aboutus />} />
-            <Route path="contact" element={<ContactUs />} />
+            {/* <Route path="contact" element={<ContactUs />} /> */}
 
             <Route path="/dashboard" element={
               <ProtectedRoute>
