@@ -71,7 +71,7 @@ const HeroSection = () => {
             Get Started
           </Link>
           <Link
-            to="features"
+            to="contact"
             className="px-8 py-3 bg-transparent border-2 border-white text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-white hover:text-green-600 transition-colors duration-300"
           >
             Learn More

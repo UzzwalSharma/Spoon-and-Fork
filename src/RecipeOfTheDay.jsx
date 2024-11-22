@@ -45,7 +45,7 @@ const RecipeOfTheDay = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        Recipe of the Day 🍳
+        Recipe of the Moment 🍳
       </motion.h2>
 
       {/* Display recipe image */}

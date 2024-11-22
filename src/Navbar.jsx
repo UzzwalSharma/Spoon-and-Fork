@@ -2,21 +2,19 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, IconButton, Menu, MenuItem, Button, Box, useMediaQuery, Divider } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
-import { FaSearchLocation } from 'react-icons/fa'; // Import React Icon for Nearby Restaurants
-import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink for smooth scrolling
+import { FaSearchLocation } from 'react-icons/fa';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  // Handle menu opening and closing
   const handleMenuClick = (event) => setAnchorEl(event.currentTarget);
   const handleMenuClose = () => setAnchorEl(null);
 
-  // List of nav items
   const navItems = ['Home', 'Features', 'About', 'Contact'];
 
   return (
@@ -31,42 +29,49 @@ const Navbar = () => {
         fontFamily: "'Poppins', sans-serif",
       }}
     >
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-
+      <Toolbar
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          px: 3, // Padding for content alignment
+        }}
+      >
         {/* Logo */}
         <Typography
           variant="h5"
-          component={Link} // Use Link here
-          to="/" // Define the route for the logo link
+          component={Link}
+          to="/"
           sx={{
             fontWeight: '700',
             color: '#333',
             textDecoration: 'none',
-            letterSpacing: '2px',  // Extra letter spacing for a sleek look
-            fontSize: '1.8rem',  // Larger font size
+            letterSpacing: '2px',
+            fontSize: '1.8rem',
             '&:hover': { color: '#4CAF50' },
+            transition: 'color 0.3s ease',
           }}
         >
           Spoon & Fork
         </Typography>
 
-        {/* Desktop Links */}
+        {/* Desktop Navigation */}
         {!isMobile && (
           <Box sx={{ display: 'flex', gap: 3 }}>
             {navItems.map((item) => (
               <Button
                 key={item}
-                component={item === 'Features' ? ScrollLink : Link} // Use ScrollLink for Features
-                to={item === 'Features' ? 'features-section' : `/${item.toLowerCase()}`} // Set target for scroll on Features
+                component={item === 'Features' ? ScrollLink : Link}
+                to={item === 'Features' ? 'features-section' : `/${item.toLowerCase()}`}
                 spy={true}
                 smooth={true}
-                offset={-70} // Offset to account for the Navbar height
-                duration={500} // Duration for scroll animation
+                offset={-70}
+                duration={500}
                 sx={{
                   color: '#333',
                   fontWeight: '500',
-                  textTransform: 'uppercase',  // Modern uppercase text
-                  letterSpacing: '1px',  // Slight letter spacing
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
                   fontSize: '1rem',
                   position: 'relative',
                   '&:hover': {
@@ -90,12 +95,12 @@ const Navbar = () => {
               >
                 {item}
               </Button>
-              
             ))}
-              {/* Nearby Restaurants Link with Icon */}
-              <Button
-              component={Link} // Use Link here
-              to="/nearby-restaurants" // Add the route for Nearby Restaurants page
+
+            {/* Nearby Restaurants */}
+            <Button
+              component={Link}
+              to="/nearby-restaurants"
               sx={{
                 color: '#333',
                 fontWeight: '500',
@@ -125,7 +130,7 @@ const Navbar = () => {
                 },
               }}
             >
-              <FaSearchLocation /> {/* Icon for Nearby Restaurants */}
+              <FaSearchLocation />
               Nearby Restaurants
             </Button>
           </Box>
@@ -139,20 +144,15 @@ const Navbar = () => {
                 variant="outlined"
                 sx={{
                   color: '#6a1b9a',
-                  borderImage: '10px linear-gradient(45deg, #E55D87, #5FC3E4) 1',
-                  borderRadius: '10px',
-                  fontWeight: 600,
+                  borderColor: '#6a1b9a',
+                  fontWeight: '600',
                   fontSize: '14px',
-                  padding: '8px 20px',
-                  transition: 'background-color 0.3s ease, transform 0.2s ease',
+                  px: 3,
+                  py: 1,
+                  borderRadius: '8px',
                   '&:hover': {
-                    backgroundColor: 'rgba(106, 27, 154, 0.1)',
-                    transform: 'translateY(-2px)',
-                  },
-                  '@media (max-width: 768px)': {
-                    fontSize: '12px',
-                    padding: '6px 18px',
-                    borderRadius: '8px',
+                    backgroundColor: '#f3e5f5',
+                    color: '#6a1b9a',
                   },
                 }}
               >
@@ -166,7 +166,7 @@ const Navbar = () => {
           </SignedIn>
         </Box>
 
-        {/* Mobile Menu Icon */}
+        {/* Mobile Menu */}
         {isMobile && (
           <IconButton
             edge="end"
@@ -179,7 +179,7 @@ const Navbar = () => {
           </IconButton>
         )}
 
-        {/* Mobile Menu */}
+        {/* Mobile Dropdown */}
         <Menu
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
@@ -198,12 +198,11 @@ const Navbar = () => {
             <MenuItem
               key={item}
               onClick={handleMenuClose}
-              component={item === 'Features' ? ScrollLink : Link} // Use ScrollLink for Features
-              to={item === 'Features' ? 'features-section' : `/${item.toLowerCase()}`} // Use "to" prop for scroll or regular navigation
+              component={item === 'Features' ? ScrollLink : Link}
+              to={item === 'Features' ? 'features-section' : `/${item.toLowerCase()}`}
               sx={{
-                color: '#333',
-                fontFamily: "'Poppins', sans-serif",
                 fontSize: '1rem',
+                fontWeight: '500',
                 letterSpacing: '0.5px',
                 '&:hover': { backgroundColor: '#F0F0F0', color: '#4CAF50' },
               }}
@@ -211,6 +210,26 @@ const Navbar = () => {
               {item}
             </MenuItem>
           ))}
+
+          <Divider sx={{ my: 1 }} />
+
+          <MenuItem
+            onClick={handleMenuClose}
+            component={Link}
+            to="/nearby-restaurants"
+            sx={{
+              fontSize: '1rem',
+              fontWeight: '500',
+              letterSpacing: '0.5px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              '&:hover': { backgroundColor: '#F0F0F0', color: '#4CAF50' },
+            }}
+          >
+            <FaSearchLocation />
+            Nearby Restaurants
+          </MenuItem>
         </Menu>
       </Toolbar>
     </AppBar>
