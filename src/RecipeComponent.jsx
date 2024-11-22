@@ -18,7 +18,7 @@ function RecipeComponent({ momos }) {
 
     try {
       // Fetch recipe info from your backend API
-      const recipeResponse = await axios.get(`https://spoon-and-fork.vercel.app/api/recipe/${encodeURIComponent(momos)}`);
+      const recipeResponse = await axios.get(`https://spoon-fork-backend.onrender.com/api/recipe/${encodeURIComponent(momos)}`);
       const page = Object.values(recipeResponse.data.query.pages)[0];
       let extract = page.extract || 'No cultural context available.';
 
