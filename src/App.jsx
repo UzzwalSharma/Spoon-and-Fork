@@ -25,14 +25,22 @@ const Loader = () => (
       transition={{ repeat: Infinity, duration: 0.6, ease: "easeInOut" }}  // Bouncing animation
     />
     
-    {/* New Thematic Loader Text with Animation */}
     <motion.div 
-      className="text-4xl font-bold text-gray-800"
+      className="text-3xl font-bold text-gray-800"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 1 }}
     >
-      Savoring the Flavor... 🍔🍕🌮
+      Preparing something delicious... 🍔🍕🌮
+    </motion.div>
+    {/* Fun message with a bit of humor */}
+    <motion.div 
+      className="text-xl font-semibold text-gray-600 mt-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1, duration: 1 }}
+    >
+      Our chefs are cooking up magic... 🪄 Just a sec!
     </motion.div>
 
     {/* Heart-themed Text with Fade-In Effect */}
@@ -42,7 +50,7 @@ const Loader = () => (
       animate={{ opacity: 1 }}
       transition={{ delay: 1, duration: 1 }}
     >
-      Made with ❤️ by Ujjwal and Diyanshi
+      Crafted with ❤️ by Ujjwal and Diyanshi, powered by coffee ☕️
     </motion.div>
 
     {/* Loader Animation Circle with Pulse Effect */}

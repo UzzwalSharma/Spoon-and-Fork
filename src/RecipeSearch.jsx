@@ -22,7 +22,7 @@ const RecipeSearch = () => {
     setError("");
 
     try {
-      const spoonacularApiKey = "dea94ffa46224c2a85f89bd5d1e34716";
+      const spoonacularApiKey = "bcfb3ed36c394b65bb58e554d5643556";
       const url = `https://api.spoonacular.com/recipes/complexSearch`;
       const params = {
         query: searchText,
