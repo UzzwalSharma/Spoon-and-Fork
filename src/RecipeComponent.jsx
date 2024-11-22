@@ -39,7 +39,7 @@ function RecipeComponent({ momos }) {
       setImageUrl(unsplashImage || null); // Use Unsplash image or fallback to null
     } catch (error) {
       console.error('Error fetching recipe info:', error);
-      setError('Failed to fetch recipe information , We are fixing our our backend pls try again later ');
+      setError('Failed to fetch recipe information  ');
     } finally {
       setLoading(false);
     }
