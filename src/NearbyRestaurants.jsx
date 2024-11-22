@@ -94,6 +94,7 @@ const NearbyRestaurants = () => {
                     🍔
                 </motion.div>
                 <p>Finding delicious places near you...</p>
+                <h2>  Made with ❤️ by  Ujjwal & Divyanshi</h2>
             </div>
         );
 
