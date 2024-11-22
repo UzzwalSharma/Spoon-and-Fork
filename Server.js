@@ -6,8 +6,11 @@ const app = express();
 
 // Use CORS middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Replace with your frontend's URL
+  origin: ['https://spoon-and-fork.vercel.app', 'http://localhost:5173'], // Add localhost for dev
+  methods: ['GET'], // Allow specific methods
 }));
+
+
 
 
 const PORT = 5000;

@@ -121,25 +121,30 @@ const NearbyRestaurants = () => {
             ))}
 
             {/* Modal to show map */}
-            <Modal
-                isOpen={!!selectedRestaurant}
-                onRequestClose={closeMap}
-                className="modal-content"
-                overlayClassName="modal-overlay"
-            >
-                {selectedRestaurant && (
-                    <div>
-                        <RestaurantMap
-                            latitude={selectedRestaurant.geocodes.main.latitude}
-                            longitude={selectedRestaurant.geocodes.main.longitude}
-                            name={selectedRestaurant.name}
-                        />
-                        <button onClick={closeMap} className="close-map-btn">
-                            Close Map
-                        </button>
-                    </div>
-                )}
-            </Modal>
+            // Inside your NearbyRestaurants.jsx component
+
+<Modal
+    isOpen={!!selectedRestaurant}
+    onRequestClose={closeMap}
+    className="modal-content"
+    overlayClassName="modal-overlay"
+>
+    {selectedRestaurant && (
+        <div>
+            <div className="map-container">
+                <RestaurantMap
+                    latitude={selectedRestaurant.geocodes.main.latitude}
+                    longitude={selectedRestaurant.geocodes.main.longitude}
+                    name={selectedRestaurant.name}
+                />
+            </div>
+            <button onClick={closeMap} className="close-map-btn">
+                Close Map
+            </button>
+        </div>
+    )}
+</Modal>
+
         </div>
     );
 };
