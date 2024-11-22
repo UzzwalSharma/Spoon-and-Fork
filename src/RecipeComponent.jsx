@@ -50,7 +50,7 @@ function RecipeComponent({ momos }) {
   }, [momos]);
 
   if (loading) return <div className="loading-message">
-  <img src="public/rocket_17204039.gif" style={{height:"400px", marginLeft:"100px"}}/>
+  <img src="/rocket_17204039.gif" style={{height:"400px", marginLeft:"100px"}}/>
   <br /><br />Loading...</div>;
   if (error) return <div className="error-message">{error}</div>;
 
