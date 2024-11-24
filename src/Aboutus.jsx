@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { 
   Users, 
   UtensilsCrossed, 
@@ -85,6 +86,9 @@ const RestaurantWebsite = () => {
           <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Meet Our Team</h2>
           <div className="grid md:grid-cols-2 gap-8">
            {/* Frontend Developer */}
+           {/* import { FaLinkedin, FaInstagram } from 'react-icons/fa'; */}
+
+{/* Frontend Developer */}
 <div className="bg-white p-6 rounded-lg shadow-md text-center">
   <div className="flex justify-center mb-4">
     <img 
@@ -98,6 +102,14 @@ const RestaurantWebsite = () => {
   <p className="text-green-700">
     Divyanshi is a dedicated frontend developer with a passion for creating visually stunning and user-friendly web interfaces. She focuses on enhancing the user experience through intuitive designs and seamless interactions.
   </p>
+  <div className="flex justify-center space-x-4 mt-4">
+    <a href="https://www.linkedin.com/in/divyanshi-gupta-6387782a2/" target="_blank" rel="noopener noreferrer">
+      <FaLinkedin className="text-blue-700" size={30} />
+    </a>
+    <a href="https://www.instagram.com/divyanshi_gupta_k/" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram" className="w-7 " />
+    </a>
+  </div>
 </div>
 
 {/* Full Stack Developer */}
@@ -114,7 +126,17 @@ const RestaurantWebsite = () => {
   <p className="text-green-700">
     Ujjwal is a versatile full stack developer, skilled in both frontend and backend technologies. He is passionate about building robust web applications from the ground up, ensuring both functionality and a smooth user experience.
   </p>
+  <div className="flex justify-center space-x-4 mt-4">
+    <a href="https://www.linkedin.com/in/ujjwal-sharma-3a1395279/" target="_blank" rel="noopener noreferrer">
+      <FaLinkedin className="text-blue-700" size={30} />
+    </a>
+    <a href="https://www.instagram.com/ujjwalsharma.jsx/" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Instagram" className="w-7 h-7" />
+    </a>
+  </div>
 </div>
+
+
 
           </div>
         </div>
