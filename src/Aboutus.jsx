@@ -84,37 +84,38 @@ const RestaurantWebsite = () => {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Meet Our Team</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Frontend Developer */}
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="flex justify-center mb-4">
-                <img 
-                  src="https://img.freepik.com/premium-vector/man-women-different-avatars-illustration-vector-art-design_666656-112.jpg" 
-                  alt="Frontend Developer" 
-                  className="w-32 h-32 rounded-full object-cover border-4 border-green-600"
-                />
-              </div>
-              <CodeIcon className="mx-auto text-green-600 mb-4" size={40} />
-              <h3 className="text-xl font-semibold text-green-800 mb-2">Frontend Developer</h3>
-              <p className="text-green-700">
-                A creative developer passionate about designing intuitive and beautiful user interfaces that bring our culinary vision to life.
-              </p>
-            </div>
+           {/* Frontend Developer */}
+<div className="bg-white p-6 rounded-lg shadow-md text-center">
+  <div className="flex justify-center mb-4">
+    <img 
+      src="https://img.freepik.com/premium-vector/man-women-different-avatars-illustration-vector-art-design_666656-112.jpg" 
+      alt="Frontend Developer" 
+      className="w-32 h-32 rounded-full object-cover border-4 border-green-600"
+    />
+  </div>
+  <CodeIcon className="mx-auto text-green-600 mb-4" size={40} />
+  <h3 className="text-xl font-semibold text-green-800 mb-2">Frontend Developer</h3>
+  <p className="text-green-700">
+    Divyanshi is a dedicated frontend developer with a passion for creating visually stunning and user-friendly web interfaces. She focuses on enhancing the user experience through intuitive designs and seamless interactions.
+  </p>
+</div>
 
-            {/* Backend & Database Developer */}
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="flex justify-center mb-4">
-                <img 
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH87TKQrWcl19xly2VNs0CjBzy8eaKNM-ZpA&s" 
-                  alt="Backend Developer" 
-                  className="w-32 h-32 rounded-full object-cover border-4 border-green-600"
-                />
-              </div>
-              <DatabaseIcon className="mx-auto text-green-600 mb-4" size={40} />
-              <h3 className="text-xl font-semibold text-green-800 mb-2">Backend & Database Developer</h3>
-              <p className="text-green-700">
-                A technical expert who ensures smooth data management, robust server-side logic, and seamless performance of our food platform.
-              </p>
-            </div>
+{/* Full Stack Developer */}
+<div className="bg-white p-6 rounded-lg shadow-md text-center">
+  <div className="flex justify-center mb-4">
+    <img 
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH87TKQrWcl19xly2VNs0CjBzy8eaKNM-ZpA&s" 
+      alt="Full Stack Developer" 
+      className="w-32 h-32 rounded-full object-cover border-4 border-green-600"
+    />
+  </div>
+  <DatabaseIcon className="mx-auto text-green-600 mb-4" size={40} />
+  <h3 className="text-xl font-semibold text-green-800 mb-2">Full Stack Developer</h3>
+  <p className="text-green-700">
+    Ujjwal is a versatile full stack developer, skilled in both frontend and backend technologies. He is passionate about building robust web applications from the ground up, ensuring both functionality and a smooth user experience.
+  </p>
+</div>
+
           </div>
         </div>
       </section>
