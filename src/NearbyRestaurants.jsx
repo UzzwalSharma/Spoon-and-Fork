@@ -122,7 +122,7 @@ const NearbyRestaurants = () => {
             ))}
 
             {/* Modal to show map */}
-            // Inside your NearbyRestaurants.jsx component
+        
 
 <Modal
     isOpen={!!selectedRestaurant}
