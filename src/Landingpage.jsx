@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 import CulinaryStories from './CulinaryStories';
 // import RecipeOfTheDay from './RecipeOfTheDay';
 import Healthier from "./Healthier.jsx"
+import Foodinsights from "./Foodinsights"
 
 import Footer from './Footer';
 
@@ -46,11 +47,14 @@ function Landingpage() {
         <RecipeOfTheDay />
       </section> */}
 
-      {/* Feedback Form */}
-      <section className="feedback-form px-4 sm:px-6 md:px-8 lg:px-16 py-8 w-full">
+   
+<section className="features flex justify-center items-center py-12 bg-gray-200 px-4 sm:px-6 md:px-8 lg:px-16 w-full">
+       <Foodinsights/>
+      </section>
+   {/* Feedback Form */}
+   <section className="feedback-form px-4 sm:px-6 md:px-8 lg:px-16 py-8 w-full">
         <Feedbackform />
       </section>
-
       {/* Footer */}
       <Footer />
     </div>

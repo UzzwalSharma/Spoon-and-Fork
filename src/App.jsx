@@ -12,7 +12,7 @@ import Aboutus from './Aboutus';
 import  Contact from "./Contacts"
 import { SignIn, SignUp } from '@clerk/clerk-react';
 import { motion } from 'framer-motion';
-
+import NutriScan from './NutriScan.jsx';
 // Loader Component with heart animation and custom message
 const Loader = () => (
   <div className="fixed inset-0 flex flex-col items-center justify-center bg-white z-50 space-y-4">
@@ -125,6 +125,7 @@ function App() {
             <Route path="/sign-up" element={<SignUp path="/sign-up" routing="path" />} />
             <Route path="/" element={isSignedIn ? <Navigate to="/dashboard" replace /> : <Landingpage />} />
             <Route path="/nearby-restaurants" element={<NearbyRestaurants />} />
+            <Route path="/nutriscan" element={<NutriScan />} />
           </Routes>
         )}
       </BrowserRouter>
