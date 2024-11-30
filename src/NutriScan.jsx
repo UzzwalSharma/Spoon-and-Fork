@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
-import { ToastContainer, toast } from 'react-toastify'; // Make sure this import is here
-import 'react-toastify/dist/ReactToastify.css';  // Don't forget to import the styles
+
+
 
 // Register chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
@@ -14,7 +14,7 @@ const NutriScan = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_KEY = "4735696ba78d43f68a7542161b4c6252"; // Replace with your actual API key
+  const API_KEY = "724009c2784e4d0d8efb019dfa7070d4"; // Replace with your actual API key
 
   // Handle food search
   const handleSearch = async () => {
@@ -23,8 +23,7 @@ const NutriScan = () => {
     setLoading(true);
     setError(null);
 
-    // Show loading notification
-    toast.info("Loading nutritional data...");
+   
 
     try {
       // Making the API request to search for food
@@ -42,11 +41,14 @@ const NutriScan = () => {
           `https://api.spoonacular.com/food/ingredients/${foodItem.id}/information?amount=100&apiKey=${API_KEY}`
         );
         setNutrition(nutritionResponse.data);
+    
       } else {
-        setError("This food doesn't exist in our database");
+        setError("This food doesnt exist in our db");
+       
       }
     } catch (err) {
       setError("An error occurred while fetching the data.");
+     
     } finally {
       setLoading(false);
     }
@@ -204,8 +206,7 @@ const NutriScan = () => {
         </div>
       )}
 
-      {/* ToastContainer for displaying toast notifications */}
-      <ToastContainer />
+    
     </div>
   );
 };

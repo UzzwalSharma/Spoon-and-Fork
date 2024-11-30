@@ -12,7 +12,7 @@ const MealScanner = () => {
         e.preventDefault();
         setLoading(true);
 
-        const API_KEY = "3051b0797dea407da1e35d5480f9f4a4"; // Replace with your Spoonacular API key
+        const API_KEY = "05dc4008f1b14f1b91b9b5dc0fa2cc09"; // Replace with your Spoonacular API key
 
         try {
             const response = await axios.get(
